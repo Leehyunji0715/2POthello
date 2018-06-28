@@ -724,7 +724,7 @@ public class Board extends JFrame{
 			p2.setBounds(200, 0, 100, 100);
 			
 			scoreShowBoard.setTitle("Score Board");
-			scoreShowBoard.setSize(300, 200);
+			scoreShowBoard.setSize(300, 700);
 			scoreShowBoard.setResizable(false);
 			scoreShowBoard.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
