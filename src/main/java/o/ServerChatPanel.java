@@ -13,7 +13,8 @@ public class ServerChatPanel extends JPanel implements ActionListener{
 	
 	public ServerChatPanel(ServerBackground server) {
 		this.server = server;
-		setSize(270,410);
+		setSize(150,410);
+		setVisible(true);
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -22,12 +23,10 @@ public class ServerChatPanel extends JPanel implements ActionListener{
 		System.out.println(msg);
 		
 		server.sendMessage(msg);
-		
 		jtf.setText("");
 	}
 	public void appendMsg(String msg) {
 		jta.append(msg);
 		System.out.println("날라온 메시지 : "+msg);
 	}
-
 }

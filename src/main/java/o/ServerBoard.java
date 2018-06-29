@@ -1,5 +1,6 @@
 package o;
 
+import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +26,7 @@ public class ServerBoard extends JFrame{
 	GameRuleSetting grs = new GameRuleSetting();
 	public int p1_score=2, p2_score=2;
 	ScoreBoardin sb = new ScoreBoardin();
+	//ServerGUI servergui = new ServerGUI();
 
 	ServerBoard(){
 		window.setTitle("O~thello");
@@ -78,7 +80,7 @@ public class ServerBoard extends JFrame{
 		 * 2:pos_y
 		 */
 		Buttons(){
-			setIcon(null);//d일단 생성시 아무런 아이콘이 뜨지 않도록 한다.  
+			setIcon(null);//일단 생성시 아무런 아이콘이 뜨지 않도록 한다.  
 			this.addActionListener(this);
 		}
 
@@ -701,22 +703,23 @@ public class ServerBoard extends JFrame{
 
 		}
 	public class ScoreBoardin extends JFrame{
+		
 		JFrame scoreShowBoard = new JFrame();
 		int p1_10digits_score,p1_1digit_score;
 		int p2_10digits_score,p2_1digit_score;
 		ImageIcon score = new ImageIcon();//점수 그림 + 플레이어 그림 
 		ServerBackground server = new ServerBackground();
 		ServerChatPanel spanel = new ServerChatPanel(server);
+		//Container con = scoreShowBoard.getContentPane();
 		
-		 JLabel p1 = new JLabel();
-		 JLabel p2 = new JLabel();
+		JLabel p1 = new JLabel();
+		JLabel p2 = new JLabel();
 
 		JLabel sc = new JLabel();
 		JLabel p1_10digits = new JLabel();			
 		JLabel p1_1digit = new JLabel();		
 		JLabel p2_10digits = new JLabel();			
 		JLabel p2_1digit = new JLabel();
-		
 		
 		public ScoreBoardin(){
 			p1.setIcon(PlayerSetting.p1);
@@ -732,6 +735,8 @@ public class ServerBoard extends JFrame{
 
 			scoreShowBoard.add(p1);
 			scoreShowBoard.add(p2);
+			//con.setLocation(20, 300);
+			//con.add(spanel);
 		}
 		
 		public void changeNum() {
@@ -866,5 +871,6 @@ public class ServerBoard extends JFrame{
 	}
 		public static void main(String[] args) {
 			new ServerBoard();
+			new ServerGUI();
 		}
 	}

@@ -869,6 +869,7 @@ public class ClientBoard extends JFrame{
 	}
 	public static void main(String[] args) {
 		new ClientBoard();
+		new ClientGUI();
 	}
 	}
 

@@ -9,12 +9,12 @@ import javax.swing.JTextField;
 public class ClientChatPanel extends JPanel implements ActionListener{
 	private JTextField jtf = new JTextField(25);
 	private JTextArea jta = new JTextArea(40,25);
-	
 	ClientBackground client = new ClientBackground();
 	
 	public ClientChatPanel (ClientBackground client) {
 		this.client = client;
-		setSize(270,410);
+		setSize(150,410);
+		setVisible(true);
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -23,11 +23,9 @@ public class ClientChatPanel extends JPanel implements ActionListener{
 		System.out.print(msg);
 		client.sendMessage(msg);
 		jtf.setText("");
-		
 	}
 	public void appendMsg(String msg) {
 		jta.append(msg);
 		System.out.println("날라온 메시지 : "+msg);
 	}
-
 }
