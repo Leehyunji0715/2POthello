@@ -705,6 +705,8 @@ public class ServerBoard extends JFrame{
 		int p1_10digits_score,p1_1digit_score;
 		int p2_10digits_score,p2_1digit_score;
 		ImageIcon score = new ImageIcon();//점수 그림 + 플레이어 그림 
+		ServerBackground server = new ServerBackground();
+		ServerChatPanel spanel = new ServerChatPanel(server);
 		
 		 JLabel p1 = new JLabel();
 		 JLabel p2 = new JLabel();
@@ -855,6 +857,14 @@ public class ServerBoard extends JFrame{
 				}
 			}
 		}
+		public void panelCreator(){
+	        ServerChatPanel serverPanel=new ServerChatPanel(server);
+	        serverPanel.setLayout(null);
+	        serverPanel.setLocation(10,208);
+	        add(serverPanel);
+	    }
 	}
-		
+		public static void main(String[] args) {
+			new ServerBoard();
+		}
 	}

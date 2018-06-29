@@ -705,9 +705,12 @@ public class ClientBoard extends JFrame{
 		int p1_10digits_score,p1_1digit_score;
 		int p2_10digits_score,p2_1digit_score;
 		ImageIcon score = new ImageIcon();//점수 그림 + 플레이어 그림 
+		ClientBackground client = new ClientBackground();
+		ClientChatPanel cpanel = new ClientChatPanel(client);
 		
-		 JLabel p1 = new JLabel();
-		 JLabel p2 = new JLabel();
+		
+		JLabel p1 = new JLabel();
+		JLabel p2 = new JLabel();
 
 		JLabel sc = new JLabel();
 		JLabel p1_10digits = new JLabel();			
@@ -730,6 +733,8 @@ public class ClientBoard extends JFrame{
 
 			scoreShowBoard.add(p1);
 			scoreShowBoard.add(p2);
+			
+			//panelCreator();
 		}
 		
 		public void changeNum() {
@@ -855,6 +860,15 @@ public class ClientBoard extends JFrame{
 				}
 			}
 		}
+		public void panelCreator(){
+	        ClientChatPanel chatPanel=new ClientChatPanel(client);
+	        chatPanel.setLayout(null);
+	        chatPanel.setLocation(10,208);
+	        add(chatPanel);
+	    }
 	}
-		
+	public static void main(String[] args) {
+		new ClientBoard();
 	}
+	}
+
